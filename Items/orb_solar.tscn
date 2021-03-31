@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Items/orb_solar4.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Items/orb_solar3.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Items/orb_solar5.png" type="Texture" id=6]
-[ext_resource path="res://orb_solar.gd" type="Script" id=7]
+[ext_resource path="res://Items/orb_solar.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Sounds/orb.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -17,10 +17,10 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=2]
 radius = 16.0
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "collect"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:scale")
@@ -82,10 +82,10 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/collect = SubResource( 5 )
+anims/collect = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 

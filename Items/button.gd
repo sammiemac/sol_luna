@@ -7,7 +7,6 @@ signal button_unpress
 
 func _on_button_body_entered(body):
 	$AnimatedSprite.play("pressed")
-	print("waht")
 	$SoundPress.play()
 	press = true
 	emit_signal("button_press")

@@ -9,7 +9,7 @@ var at_door2 = false
 
 func _process(delta):
 	if Input.is_action_pressed("restart"):
-		get_tree().change_scene("res://Level3.tscn")
+		get_tree().change_scene("res://Levels/Level3.tscn")
 
 
 # Must have collected all orbs and both standing in the tunnels
@@ -22,7 +22,7 @@ func doors():
 		$tunnel_solar.open()
 func _on_Timer_timeout():
 	if at_door1 and at_door2:
-		get_tree().change_scene("res://Level2.tscn")
+		get_tree().change_scene("res://Levels/Level3.tscn")
 	else:
 		$Timer.start()
 

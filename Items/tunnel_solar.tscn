@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Items/tunnel_solar_open.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Items/tunnel_solar_close.png" type="Texture" id=2]
-[ext_resource path="res://tunnel_solar.gd" type="Script" id=3]
+[ext_resource path="res://Items/tunnel_solar.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

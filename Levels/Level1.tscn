@@ -1,20 +1,43 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Tilemap.tres" type="TileSet" id=1]
-[ext_resource path="res://player1.tscn" type="PackedScene" id=19]
-[ext_resource path="res://box.tscn" type="PackedScene" id=20]
-[ext_resource path="res://button.tscn" type="PackedScene" id=21]
-[ext_resource path="res://cage.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Level1.gd" type="Script" id=23]
-[ext_resource path="res://orb_solar.tscn" type="PackedScene" id=24]
-[ext_resource path="res://orb_lunar.tscn" type="PackedScene" id=25]
-[ext_resource path="res://tunnel_lunar.tscn" type="PackedScene" id=26]
-[ext_resource path="res://tunnel_solar.tscn" type="PackedScene" id=27]
-[ext_resource path="res://door.tscn" type="PackedScene" id=28]
-[ext_resource path="res://key_solar.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/BG/bg_2.3.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=11]
+[ext_resource path="res://Items/player1.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Items/box.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Items/button.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Items/cage.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Items/orb_solar.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Items/orb_lunar.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Items/tunnel_lunar.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Items/tunnel_solar.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Items/door.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Items/key_solar.tscn" type="PackedScene" id=29]
 
 [node name="Level1" type="Node2D"]
-script = ExtResource( 23 )
+script = ExtResource( 11 )
+
+[node name="BG" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="TextureRect" parent="BG"]
+margin_left = 1.13687e-13
+margin_top = -2368.0
+margin_right = 256.0
+margin_bottom = -1856.0
+rect_scale = Vector2( 6.25, 6.25 )
+texture = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )

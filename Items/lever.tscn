@@ -4,7 +4,8 @@
 [ext_resource path="res://Assets/Items/lever_stick.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Items/lever_lunar.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/lever_on.wav" type="AudioStream" id=4]
-[ext_resource path="res://lever.gd" type="Script" id=5]
+[ext_resource path="res://Items/lever.gd" type="Script" id=5]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0

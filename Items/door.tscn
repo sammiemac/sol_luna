@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Items/door_solar.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Items/door_lunar.png" type="Texture" id=2]
-[ext_resource path="res://door.gd" type="Script" id=3]
+[ext_resource path="res://Items/door.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sounds/door.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]

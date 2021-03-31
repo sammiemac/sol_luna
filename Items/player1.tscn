@@ -16,24 +16,24 @@
 [ext_resource path="res://Assets/Players/luna_idle.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Players/sol_walk1.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Players/sol_walk4.png" type="Texture" id=16]
-[ext_resource path="res://player1.gd" type="Script" id=17]
+[ext_resource path="res://Items/player1.gd" type="Script" id=17]
 [ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "walk2",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "idle2",
+"name": "jump2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "fall2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "crouch2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 16 ) ],
@@ -46,19 +46,9 @@ animations = [ {
 "name": "crouch1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
-"name": "fall1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "jump1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "jump2",
+"name": "idle2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -66,10 +56,20 @@ animations = [ {
 "name": "idle1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "crouch2",
+"name": "jump1",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "fall1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walk2",
+"speed": 8.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
