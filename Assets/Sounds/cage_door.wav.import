@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cage_door.wav-2a229e61b1b5ef6e34c47fbeeb090fcf.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/cage_door.wav"
+dest_files=[ "res://.import/cage_door.wav-2a229e61b1b5ef6e34c47fbeeb090fcf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

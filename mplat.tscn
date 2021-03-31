@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Tilemaps/plat_single.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Tilemaps/plat_blank_right.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tilemaps/plat_blank_left.png" type="Texture" id=3]
+[ext_resource path="res://mplat.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 56, 8 )
+
+[node name="mplat" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Platform" type="KinematicBody2D" parent="."]
+
+[node name="left" type="Sprite" parent="Platform"]
+position = Vector2( -32, 0 )
+texture = ExtResource( 3 )
+
+[node name="right" type="Sprite" parent="Platform"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 2 )
+
+[node name="single" type="Sprite" parent="Platform"]
+visible = false
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D_short" type="CollisionShape2D" parent="Platform"]
+visible = false
+position = Vector2( 0, -24 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D_long" type="CollisionShape2D" parent="Platform"]
+position = Vector2( 0, -24 )
+shape = SubResource( 2 )
+
+[node name="MoveTween" type="Tween" parent="."]
+playback_process_mode = 0
+
+[node name="Timer" type="Timer" parent="."]

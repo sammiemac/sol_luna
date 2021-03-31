@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lever_on.wav-d9f4508a0a6d2b61131380108a5fcead.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/lever_on.wav"
+dest_files=[ "res://.import/lever_on.wav-d9f4508a0a6d2b61131380108a5fcead.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
