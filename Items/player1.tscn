@@ -26,16 +26,6 @@ animations = [ {
 "name": "jump2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "fall2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "crouch2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "walk1",
@@ -46,19 +36,19 @@ animations = [ {
 "name": "crouch1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "idle2",
+"name": "jump1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "fall2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "idle1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "jump1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
@@ -70,6 +60,16 @@ animations = [ {
 "loop": true,
 "name": "walk2",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "crouch2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "idle2",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -100,3 +100,4 @@ disabled = true
 
 [node name="SoundJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
+volume_db = -5.0

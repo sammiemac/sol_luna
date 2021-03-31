@@ -1,7 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/BG/bg_2.3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/prstartk.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/UI/arrow-UP.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/grey_button13.png" type="Texture" id=5]
+[ext_resource path="res://Assets/BG/columns_2.2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/BG/tower_v2.1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/BG/tower_1.3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/BGM/LEVEL_1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=11]
 [ext_resource path="res://Items/player1.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Items/box.tscn" type="PackedScene" id=20]
@@ -14,6 +21,31 @@
 [ext_resource path="res://Items/door.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Items/key_solar.tscn" type="PackedScene" id=29]
 
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.129412, 0.0627451, 0.341176, 0.729412 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.129412, 0.0627451, 0.341176, 0.729412 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+font_data = ExtResource( 3 )
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 11 )
 
@@ -24,7 +56,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sky" type="TextureRect" parent="BG"]
+[node name="background" type="Control" parent="BG"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="TextureRect" parent="BG/background"]
 margin_left = 1.13687e-13
 margin_top = -2368.0
 margin_right = 256.0
@@ -32,9 +73,321 @@ margin_bottom = -1856.0
 rect_scale = Vector2( 6.25, 6.25 )
 texture = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Towers" type="TextureRect" parent="BG/background"]
+margin_top = 256.0
+margin_right = 448.0
+margin_bottom = 768.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Towers2" type="TextureRect" parent="BG/background"]
+margin_left = 360.0
+margin_top = -296.0
+margin_right = 824.0
+margin_bottom = 784.0
+texture = ExtResource( 8 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Towers5" type="TextureRect" parent="BG/background"]
+margin_left = 832.0
+margin_top = 440.0
+margin_right = 1184.0
+margin_bottom = 808.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Towers3" type="TextureRect" parent="BG/background"]
+margin_left = 1128.0
+margin_top = 128.0
+margin_right = 1578.0
+margin_bottom = 802.0
+rect_scale = Vector2( 1.03125, 1.00398 )
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Towers4" type="TextureRect" parent="BG/background"]
+margin_left = 760.0
+margin_top = -120.0
+margin_right = 1210.0
+margin_bottom = 554.0
+rect_scale = Vector2( 1.03125, 1.00398 )
+texture = ExtResource( 7 )
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Columns" type="TextureRect" parent="BG/background"]
+margin_right = 1600.0
+margin_bottom = 800.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player1" type="Panel" parent="BG"]
+margin_left = 96.0
+margin_top = 592.0
+margin_right = 352.0
+margin_bottom = 752.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="w" type="TextureRect" parent="BG/player1"]
+margin_left = 104.0
+margin_top = 16.0
+margin_right = 153.0
+margin_bottom = 61.0
+texture = ExtResource( 5 )
+
+[node name="W" type="Label" parent="BG/player1/w"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.6101
+margin_top = -15.7951
+margin_right = 19.3899
+margin_bottom = 20.2049
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "W"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="a" type="TextureRect" parent="BG/player1"]
+margin_left = 48.0
+margin_top = 64.0
+margin_right = 97.0
+margin_bottom = 109.0
+texture = ExtResource( 5 )
+
+[node name="A" type="Label" parent="BG/player1/a"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.6581
+margin_top = -16.1837
+margin_right = 19.3419
+margin_bottom = 19.8163
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="s" type="TextureRect" parent="BG/player1"]
+margin_left = 104.0
+margin_top = 64.0
+margin_right = 153.0
+margin_bottom = 109.0
+texture = ExtResource( 5 )
+
+[node name="S" type="Label" parent="BG/player1/s"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -14.712
+margin_top = -16.4485
+margin_right = 20.288
+margin_bottom = 19.5515
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "S"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="d" type="TextureRect" parent="BG/player1"]
+margin_left = 160.0
+margin_top = 64.0
+margin_right = 209.0
+margin_bottom = 109.0
+texture = ExtResource( 5 )
+
+[node name="D" type="Label" parent="BG/player1/d"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -14.6456
+margin_top = -15.8185
+margin_right = 20.3544
+margin_bottom = 20.1815
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "D"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Move" type="Label" parent="BG/player1"]
+margin_left = 16.0
+margin_top = 120.0
+margin_right = 240.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 3 )
+text = "Player 1 MOVE!"
+align = 1
+valign = 1
+
+[node name="player2" type="Panel" parent="BG"]
+margin_left = 928.0
+margin_top = 336.0
+margin_right = 1184.0
+margin_bottom = 496.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="up" type="TextureRect" parent="BG/player2"]
+margin_left = 104.0
+margin_top = 16.0
+margin_right = 153.0
+margin_bottom = 61.0
+texture = ExtResource( 5 )
+
+[node name="UP" type="TextureRect" parent="BG/player2/up"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.5
+margin_top = -14.5
+margin_right = 783.5
+margin_bottom = 785.5
+rect_scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 4 )
+
+[node name="left" type="TextureRect" parent="BG/player2"]
+margin_left = 48.0
+margin_top = 64.0
+margin_right = 97.0
+margin_bottom = 109.0
+texture = ExtResource( 5 )
+
+[node name="LEFT" type="TextureRect" parent="BG/player2/left"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.5
+margin_top = 17.5
+margin_right = 783.5
+margin_bottom = 817.5
+rect_rotation = -90.0
+rect_scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 4 )
+
+[node name="down" type="TextureRect" parent="BG/player2"]
+margin_left = 104.0
+margin_top = 64.0
+margin_right = 153.0
+margin_bottom = 109.0
+texture = ExtResource( 5 )
+
+[node name="DOWN" type="TextureRect" parent="BG/player2/down"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 15.5
+margin_top = 17.5
+margin_right = 815.5
+margin_bottom = 817.5
+rect_rotation = 180.0
+rect_scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="TextureRect" parent="BG/player2"]
+margin_left = 160.0
+margin_top = 64.0
+margin_right = 209.0
+margin_bottom = 109.0
+texture = ExtResource( 5 )
+
+[node name="DOWN2" type="TextureRect" parent="BG/player2/right"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 15.5
+margin_top = -14.5
+margin_right = 815.5
+margin_bottom = 785.5
+rect_rotation = 90.0
+rect_scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move" type="Label" parent="BG/player2"]
+margin_left = 16.0
+margin_top = 120.0
+margin_right = 240.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 3 )
+text = "Player 2 MOVE!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart" type="Panel" parent="BG"]
+margin_left = 416.0
+margin_top = 400.0
+margin_right = 672.0
+margin_bottom = 560.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Restart" type="Label" parent="BG/restart"]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 248.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 5 )
+text = "Press R anytime to restart the level!"
+align = 1
+valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,6 +459,10 @@ position = Vector2( 640, 736 )
 [node name="cage" parent="." instance=ExtResource( 22 )]
 position = Vector2( 1440, 704 )
 scale = Vector2( 2, 2 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="tunnel_lunar" to="." method="_on_tunnel_lunar_body_entered"]
 [connection signal="body_exited" from="tunnel_lunar" to="." method="_on_tunnel_lunar_body_exited"]

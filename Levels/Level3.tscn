@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Items/orb_solar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Items/key_solar.tscn" type="PackedScene" id=2]
@@ -16,9 +16,105 @@
 [ext_resource path="res://Items/orb_lunar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Items/tunnel_solar.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Items/tunnel_lunar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/BGM/LEVEL_3.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/BG/columns_single__1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/BG/columns_single__3.png" type="Texture" id=19]
+[ext_resource path="res://Assets/BG/bg_2.3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/BG/tower_v2.1.png" type="Texture" id=21]
+[ext_resource path="res://Assets/BG/tower_1.3.png" type="Texture" id=22]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 13 )
+
+[node name="BG" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="TextureRect" parent="BG"]
+margin_left = 2.38419e-07
+margin_top = -1344.0
+margin_right = 256.0
+margin_bottom = -832.0
+rect_scale = Vector2( 6.25, 6.25 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tower" type="TextureRect" parent="BG"]
+margin_left = 16.0
+margin_top = 488.0
+margin_right = 432.0
+margin_bottom = 720.0
+texture = ExtResource( 22 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tower2" type="TextureRect" parent="BG"]
+margin_left = 384.0
+margin_top = 560.0
+margin_right = 800.0
+margin_bottom = 792.0
+texture = ExtResource( 22 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tower3" type="TextureRect" parent="BG"]
+margin_left = 824.0
+margin_top = 32.0
+margin_right = 1200.0
+margin_bottom = 768.0
+texture = ExtResource( 21 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tower4" type="TextureRect" parent="BG"]
+margin_left = 1232.0
+margin_top = 464.0
+margin_right = 1608.0
+margin_bottom = 912.0
+texture = ExtResource( 22 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Columns" type="TextureRect" parent="BG"]
+margin_left = -168.0
+margin_top = -88.0
+margin_right = 506.0
+margin_bottom = 720.0
+texture = ExtResource( 18 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Columns2" type="TextureRect" parent="BG"]
+margin_left = 840.0
+margin_top = -112.0
+margin_right = 1216.0
+margin_bottom = 720.0
+texture = ExtResource( 19 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = ExtResource( 10 )
@@ -232,6 +328,11 @@ position = Vector2( 384, -216 )
 position = Vector2( 1408, -416 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -10.0
+autoplay = true
 [connection signal="body_entered" from="tunnel_lunar" to="." method="_on_tunnel_lunar_body_entered"]
 [connection signal="body_exited" from="tunnel_lunar" to="." method="_on_tunnel_lunar_body_exited"]
 [connection signal="body_entered" from="tunnel_solar" to="." method="_on_tunnel_solar_body_entered"]
@@ -240,8 +341,8 @@ position = Vector2( 1408, -416 )
 [connection signal="button_unpress" from="ButtonsMPlats/button" to="." method="_on_button_button_unpress"]
 [connection signal="button_press" from="ButtonsMPlats/button2" to="." method="_on_button2_button_press"]
 [connection signal="button_unpress" from="ButtonsMPlats/button2" to="." method="_on_button2_button_unpress"]
-[connection signal="button_press" from="ButtonsMPlats/button3" to="." method="_on_button3_button_press"]
 [connection signal="button_press" from="ButtonsMPlats/button3" to="Doors/door3" method="_on_button_button_press"]
+[connection signal="button_press" from="ButtonsMPlats/button3" to="." method="_on_button3_button_press"]
 [connection signal="button_unpress" from="ButtonsMPlats/button3" to="." method="_on_button3_button_unpress"]
 [connection signal="button_press" from="ButtonsMPlats/button4" to="." method="_on_button4_button_press"]
 [connection signal="button_unpress" from="ButtonsMPlats/button4" to="." method="_on_button4_button_unpress"]

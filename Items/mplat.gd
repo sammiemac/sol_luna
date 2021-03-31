@@ -6,8 +6,6 @@ const IDLE_DURATION = 0.3 #Resting time
 
 export var move_to = Vector2.RIGHT * 192
 export var speed = 3.0 #Number of tiles it moves per second
-enum {TWO_WAY, ONE_WAY}
-export var direction = TWO_WAY
 var disabled = true
 export var invisible = false
 var returning = false
@@ -67,12 +65,13 @@ func appear():
 
 func move():
 	if not disabled:
-		var duration = move_to.length() / float(speed * 32) # <- last number is tile size
+		var platPos = platform.position
+		tween.stop_all()
 		if not returning:
-			tween.interpolate_property(platform, "position", Vector2.ZERO, move_to, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, IDLE_DURATION)
+			var duration = (move_to.length()-platPos.length()) / float(speed * 32) # <- last number is tile size
+			tween.interpolate_property(platform, "position", platPos, move_to, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, IDLE_DURATION)
 		else:
-			tween.interpolate_property(platform, "position", move_to, Vector2.ZERO, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, IDLE_DURATION)
+			var duration = platPos.length() / float(speed * 32) # <- last number is tile size
+			tween.interpolate_property(platform, "position", platPos, Vector2.ZERO, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, IDLE_DURATION)
 		tween.start()
-#		$Timer.wait_time = duration
-#		$Timer.start()
 		returning = !returning

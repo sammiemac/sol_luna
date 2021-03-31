@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Items/button.tscn" type="PackedScene" id=2]
@@ -16,9 +16,104 @@
 [ext_resource path="res://Items/orb_solar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Items/tunnel_solar.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Items/orb_lunar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/BG/bg_2.3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/BG/columns_2.3.png" type="Texture" id=18]
+[ext_resource path="res://Assets/BGM/LEVEL_2.wav" type="AudioStream" id=19]
+[ext_resource path="res://Assets/BG/columns_single__1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/BG/columns_single__3.png" type="Texture" id=21]
+[ext_resource path="res://Assets/BG/columns_single__2.png" type="Texture" id=22]
+[ext_resource path="res://Assets/BG/tower_v2.1.png" type="Texture" id=23]
+[ext_resource path="res://Assets/BG/tower_1.3.png" type="Texture" id=24]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource( 11 )
+
+[node name="BG" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="TextureRect" parent="BG"]
+margin_left = 4.76837e-07
+margin_top = -1944.0
+margin_right = 256.0
+margin_bottom = -1432.0
+rect_scale = Vector2( 6.25, 6.25 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Towers" type="TextureRect" parent="BG"]
+margin_left = 296.0
+margin_top = -600.0
+margin_right = 888.0
+margin_bottom = 912.0
+texture = ExtResource( 24 )
+expand = true
+flip_h = true
+
+[node name="Towers2" type="TextureRect" parent="BG"]
+margin_left = -224.0
+margin_top = 264.0
+margin_right = 488.0
+margin_bottom = 1072.0
+texture = ExtResource( 24 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Towers3" type="TextureRect" parent="BG"]
+margin_left = 752.0
+margin_top = -728.0
+margin_right = 1616.0
+margin_bottom = 792.0
+texture = ExtResource( 23 )
+expand = true
+flip_h = true
+
+[node name="Columns" type="TextureRect" parent="BG"]
+margin_right = 1600.0
+margin_bottom = 800.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Columns2" type="TextureRect" parent="BG"]
+margin_left = 1064.0
+margin_top = -784.0
+margin_right = 1738.0
+margin_bottom = 16.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Columns3" type="TextureRect" parent="BG"]
+margin_left = 8.0
+margin_top = -784.0
+margin_right = 682.0
+margin_bottom = 16.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Columns4" type="TextureRect" parent="BG"]
+margin_left = 416.0
+margin_top = -768.0
+margin_right = 1090.0
+margin_bottom = 32.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -183,6 +278,10 @@ position = Vector2( 1280, -568 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+autoplay = true
 [connection signal="body_entered" from="tunnel_solar" to="." method="_on_tunnel_solar_body_entered"]
 [connection signal="body_exited" from="tunnel_solar" to="." method="_on_tunnel_solar_body_exited"]
 [connection signal="body_entered" from="tunnel_lunar" to="." method="_on_tunnel_lunar_body_entered"]
@@ -203,10 +302,10 @@ wait_time = 0.5
 [connection signal="button_unpress" from="ButtonMPlats/button7" to="." method="_on_button5_button_unpress"]
 [connection signal="off" from="LeversPlats/lever" to="LeversPlats/plat_solar" method="_on_lever_off"]
 [connection signal="on" from="LeversPlats/lever" to="LeversPlats/plat_solar" method="_on_lever_on"]
-[connection signal="off" from="LeversPlats/lever2" to="LeversPlats/plat_lunar2" method="_on_lever_on"]
 [connection signal="off" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_off"]
-[connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar2" method="_on_lever_off"]
+[connection signal="off" from="LeversPlats/lever2" to="LeversPlats/plat_lunar2" method="_on_lever_on"]
 [connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_on"]
+[connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar2" method="_on_lever_off"]
 [connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_off"]
 [connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar3" method="_on_lever_on"]
 [connection signal="on" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_on"]
