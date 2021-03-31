@@ -21,11 +21,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "jump2",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "walk1",
@@ -34,16 +29,6 @@ animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "crouch1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "jump1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "fall2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -56,6 +41,16 @@ animations = [ {
 "name": "fall1",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "jump1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "fall2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk2",
@@ -64,6 +59,11 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "crouch2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "jump2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ) ],
@@ -100,4 +100,4 @@ disabled = true
 
 [node name="SoundJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
-volume_db = -5.0
+volume_db = -8.0

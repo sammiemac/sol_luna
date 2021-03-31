@@ -146,9 +146,11 @@ anims/on = SubResource( 3 )
 
 [node name="SoundOn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -8.0
 
 [node name="SoundOff" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -8.0
 
 [node name="Timer" type="Timer" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_lever_body_entered"]

@@ -462,6 +462,7 @@ scale = Vector2( 2, 2 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -5.0
 autoplay = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="tunnel_lunar" to="." method="_on_tunnel_lunar_body_entered"]

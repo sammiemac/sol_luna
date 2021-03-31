@@ -7,6 +7,10 @@ var at_door1 = false
 var at_door2 = false
 
 
+func _ready():
+	$SoundTransition.play()
+
+
 func _process(delta):
 	if Input.is_action_pressed("restart"):
 		get_tree().change_scene("res://Levels/Level3.tscn")
@@ -22,7 +26,7 @@ func doors():
 		$tunnel_solar.open()
 func _on_Timer_timeout():
 	if at_door1 and at_door2:
-		get_tree().change_scene("res://Levels/Level3.tscn")
+		get_tree().change_scene("res://Screens/End.tscn")
 	else:
 		$Timer.start()
 

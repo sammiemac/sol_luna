@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Items/button.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Assets/BG/columns_single__2.png" type="Texture" id=22]
 [ext_resource path="res://Assets/BG/tower_v2.1.png" type="Texture" id=23]
 [ext_resource path="res://Assets/BG/tower_1.3.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sounds/transition.wav" type="AudioStream" id=25]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource( 11 )
@@ -282,6 +283,10 @@ wait_time = 0.5
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
 autoplay = true
+
+[node name="SoundTransition" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -5.0
 [connection signal="body_entered" from="tunnel_solar" to="." method="_on_tunnel_solar_body_entered"]
 [connection signal="body_exited" from="tunnel_solar" to="." method="_on_tunnel_solar_body_exited"]
 [connection signal="body_entered" from="tunnel_lunar" to="." method="_on_tunnel_lunar_body_entered"]
@@ -302,14 +307,14 @@ autoplay = true
 [connection signal="button_unpress" from="ButtonMPlats/button7" to="." method="_on_button5_button_unpress"]
 [connection signal="off" from="LeversPlats/lever" to="LeversPlats/plat_solar" method="_on_lever_off"]
 [connection signal="on" from="LeversPlats/lever" to="LeversPlats/plat_solar" method="_on_lever_on"]
-[connection signal="off" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_off"]
 [connection signal="off" from="LeversPlats/lever2" to="LeversPlats/plat_lunar2" method="_on_lever_on"]
-[connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_on"]
+[connection signal="off" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_off"]
 [connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar2" method="_on_lever_off"]
-[connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_off"]
+[connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_on"]
 [connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar3" method="_on_lever_on"]
-[connection signal="on" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_on"]
+[connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_off"]
 [connection signal="on" from="LeversPlats/lever3" to="LeversPlats/plat_solar3" method="_on_lever_off"]
+[connection signal="on" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_on"]
 [connection signal="collected" from="Collectibles/key_lunar" to="Doors/door2" method="_on_key_lunar_collected"]
 [connection signal="collected" from="Collectibles/key_solar" to="Doors/door" method="_on_key_solar_collected"]
 [connection signal="collected" from="Collectibles/key_lunar2" to="Doors/door4" method="_on_key_lunar_collected"]
