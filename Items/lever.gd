@@ -10,6 +10,7 @@ export var lever_id = 0
 export var on = false
 signal on
 signal off
+var entered = false
 
 
 func _ready():
@@ -24,9 +25,16 @@ func _ready():
 		$AnimationPlayer.play("off")
 
 
+func _process(delta):
+	if entered:
+		print("enter")
+		$Timer.start()
+		$CollisionShape2D.disabled = true
+		entered = false
+
+
 func _on_lever_body_entered(body):
-	$Timer.start()
-	$CollisionShape2D.disabled = true
+	entered = true;
 	
 	if not on:
 		$AnimationPlayer.play("on")

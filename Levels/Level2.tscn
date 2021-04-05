@@ -33,6 +33,7 @@ script = ExtResource( 11 )
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -55,6 +56,9 @@ margin_bottom = 912.0
 texture = ExtResource( 24 )
 expand = true
 flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Towers2" type="TextureRect" parent="BG"]
 margin_left = -224.0
@@ -311,10 +315,10 @@ volume_db = -5.0
 [connection signal="off" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_off"]
 [connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar2" method="_on_lever_off"]
 [connection signal="on" from="LeversPlats/lever2" to="LeversPlats/plat_lunar" method="_on_lever_on"]
-[connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar3" method="_on_lever_on"]
 [connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_off"]
-[connection signal="on" from="LeversPlats/lever3" to="LeversPlats/plat_solar3" method="_on_lever_off"]
+[connection signal="off" from="LeversPlats/lever3" to="LeversPlats/plat_solar3" method="_on_lever_on"]
 [connection signal="on" from="LeversPlats/lever3" to="LeversPlats/plat_solar2" method="_on_lever_on"]
+[connection signal="on" from="LeversPlats/lever3" to="LeversPlats/plat_solar3" method="_on_lever_off"]
 [connection signal="collected" from="Collectibles/key_lunar" to="Doors/door2" method="_on_key_lunar_collected"]
 [connection signal="collected" from="Collectibles/key_solar" to="Doors/door" method="_on_key_solar_collected"]
 [connection signal="collected" from="Collectibles/key_lunar2" to="Doors/door4" method="_on_key_lunar_collected"]
